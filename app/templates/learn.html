@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor - Learning Mode</title>
+    <link rel="stylesheet" href="/app/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AI Tutor</div>
+                <ul>
+                    <li><a href="/app/templates/index.html">Home</a></li>
+                    <li><a href="/app/templates/learn.html">Learn</a></li>
+                    <li><a href="/app/templates/practice.html">Practice</a></li>
+                </ul>
+                <div class="toggle-container">
+                    <input type="checkbox" id="mode-toggle" class="mode-toggle">
+                    <label for="mode-toggle" class="toggle-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <span class="toggle-icon"></span>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="lesson" class="learning-section">
+            <h1>Learning Mode</h1>
+
+            
+            <div class="current-lesson">
+                <h2>Current Lesson: <span id="current-lesson">{{ lesson }}</span></h2>
+                <div id="lesson-content" class="lesson-content">
+                    Welcome to your personalized Python learning journey! Let's explore {{ lesson }} together.
+                </div>
+                
+            </div>
+
+           
+        </section>
+
+        <section id="ai-assistant" class="ai-assistant-section">
+            <h2>AI Assistant</h2>
+            <div id="chat-window" class="chat-window">
+                <!-- Chat messages will be dynamically inserted here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your question here...">
+                <button id="send-button" class="cta-button">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AI Tutor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/app/static/js/main.js"></script>
+    <script src="/app/static/js/learn.js"></script>
+</body>
+</html>

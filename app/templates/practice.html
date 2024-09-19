@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor - Practice Mode</title>
+    <link rel="stylesheet" href="/app/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/python/python.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">AI Tutor</div>
+                <ul>
+                    <li><a href="/app/templates/index.html">Home</a></li>
+                    <li><a href="/app/templates/learn.html">Learn</a></li>
+                    <li><a href="/app/templates/practice.html">Practice</a></li>
+                </ul>
+                <div class="toggle-container">
+                    <input type="checkbox" id="mode-toggle" class="mode-toggle">
+                    <label for="mode-toggle" class="toggle-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <span class="toggle-icon"></span>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="coding-challenge" class="challenge-section">
+            <h1>Practice Mode</h1>
+            <div id="challenge-description" class="challenge-description">
+                <h2>Coding Challenge</h2>
+                <p>{{ question }}</p>
+            </div>
+        </section>
+
+        <section id="code-editor" class="code-editor-section">
+            <h2>Code Editor</h2>
+            <textarea id="editor"></textarea>
+            <div class="editor-controls">
+                <button id="run-code" class="cta-button">Run Code</button>
+                <button id="submit-solution" class="cta-button">Submit Solution</button>
+            </div>
+        </section>
+
+        <section id="output" class="output-section">
+            <h2>Output</h2>
+            <pre id="code-output" class="code-output"></pre>
+        </section>
+
+        <section id="feedback" class="feedback-section">
+            <h2>AI Feedback</h2>
+            <div id="ai-feedback" class="ai-feedback"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AI Tutor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/app/static/js/main.js"></script>
+    <script src="/app/static/js/practice.js"></script>
+</body>
+</html>
