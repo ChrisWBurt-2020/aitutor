@@ -99,8 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Usage
-    const elementWithTooltip = document.querySelector('.tooltip-trigger');
-    createTooltip(elementWithTooltip, 'This is additional information');
+    const elementWithTooltip = document.querySelector('.logo');
+    createTooltip(elementWithTooltip, 'I am your coding friend!');
+
+    const elementWithTooltip2 = document.querySelector('.cta-button');
+    createTooltip(elementWithTooltip2, 'This is additional information');
 
 
 });

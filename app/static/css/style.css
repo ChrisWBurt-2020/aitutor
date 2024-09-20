@@ -1,6 +1,6 @@
 :root {
     --primary-color: #3498db;
-    --secondary-color: #2ff60c;
+    --secondary-color: #968cff;
     --text-color: #333;
     --background-color: #f4f4f4;
     --white-color: #fff;
@@ -81,19 +81,25 @@ nav ul li a:hover {
 .toggle-label {
     width: 60px;
     height: 30px;
-    background-color: var(--secondary-color);
-    border-radius: 15px;
+    background-color: #ccc;
+    border-radius: 30px;
     position: relative;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-label:hover {
+    background-color: #bbb;
 }
 
 .toggle-label i {
     color: var(--white-color);
     font-size: 14px;
+    transition: opacity 0.3s ease;
 }
 
 .toggle-icon {
@@ -104,11 +110,24 @@ nav ul li a:hover {
     position: absolute;
     top: 2px;
     left: 2px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mode-toggle:checked + .toggle-label {
+    background-color: var(--secondary-color);
 }
 
 .mode-toggle:checked + .toggle-label .toggle-icon {
     transform: translateX(30px);
+}
+
+.mode-toggle:checked + .toggle-label i:first-child {
+    opacity: 0;
+}
+
+.mode-toggle:not(:checked) + .toggle-label i:last-child {
+    opacity: 0;
 }
 
 main {
@@ -161,6 +180,7 @@ h2 {
     background-color: var(--white-color);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* animation: pulse 10s infinite; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -363,12 +383,13 @@ input[type="text"], textarea {
 /* Tooltip */
 .tooltip {
     position: absolute;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-color);
+    color: black;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 14px;
     z-index: 100;
+    animation: pulse 2s infinite;
 }
 
 /* Responsive styles */

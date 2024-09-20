@@ -9,6 +9,7 @@ class User(db.Model):
     current_lesson = db.Column(db.String(100), default='Introduction to Python')
     last_activity = db.Column(db.DateTime, default=datetime.utcnow)
     completed_lessons = db.Column(db.Text, default='')
+    coding_challenge = db.Column(db.Text, default='')  # New attribute to store coding challenge
 
     def __repr__(self):
         return f'<User {self.username}>'
@@ -22,5 +23,12 @@ class User(db.Model):
         else:
             self.completed_lessons = self.current_lesson
 
+        # New: Get the coding challenge for the current lesson
+        self.coding_challenge = ai_tutor.generate_practice_question(self.current_lesson)
+
     def get_completed_lessons(self):
         return self.completed_lessons.split(',') if self.completed_lessons else []
+
+    # New: Method to get the current coding challenge
+    def get_coding_challenge(self):
+        return getattr(self, 'coding_challenge', None)  # Return None if not set

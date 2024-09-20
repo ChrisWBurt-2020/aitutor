@@ -14,4 +14,4 @@ def run(debug, host, port):
     app.run(debug=debug, host=host, port=port)
 
 if __name__ == '__main__':
-    run()
+    app.run(debug=True)
